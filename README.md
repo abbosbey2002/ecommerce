@@ -4,9 +4,9 @@
 
 # 2. create database and connect
 
-#
+#3. create product crud operation 
 
-#
+#4. user authentication for signUp
 
 #
 
