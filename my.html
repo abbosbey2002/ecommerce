@@ -5,13 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <h1 style="color: green">Welcome To GFG</h1>
-    <input type="text" id="name" placeholder="Name" />
-    <input type="email" id="email" placeholder="Email" />
-    <button onclick="send()">Send</button>
+    <div class="container"> 
+        <h1>Post</h1>
+        <h1 style="color: green">Welcome To GFG</h1>
+        <input type="text" id="name" placeholder="Name" />
+        <input type="email" id="email" placeholder="Email" />
+        <button onclick="send()">Send</button>
+    </div>
+    <div class="container"> 
+        <h1>delete</h1>
+        <h1 style="color: green">Welcome To GFG</h1>
+        <input type="number" id="id" placeholder="id" />
+        <input type="email" id="email" placeholder="Email" />
+        <button onclick="removes()">remove</button>
+    </div>
 
 
     <script>
@@ -44,7 +54,23 @@
   .catch(error => console.error(error))
   
         }
+        function removes(){
+    
+            var id = document.getElementById("id").value;
+            json={"id":id}
+            fetch("http://localhost:8000/", {
+  method: 'DELETE',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({"id":21})  //if you do not want to send any addional data,  replace the complete JSON.stringify(YOUR_ADDITIONAL_DATA) with null
+})
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error))
   
+        
+        }
     </script>
 </body>
 </html>

@@ -1,6 +1,5 @@
 <?php
 
-
 require_once "config/bootstrap.php";
 
 header('Access-Control-Allow-Origin: *');
@@ -14,8 +13,8 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,
 if($_SERVER['REQUEST_METHOD'] === "GET" && !isset($_GET['id'])){
   $products=Post::getAll();
   print_r($products);
-  echo json_encode($products->title);
-  echo '</br> hi this mistake </br>';
+  // echo json_encode($products->title);
+ 
 }
 
 // get one products
@@ -95,4 +94,5 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     );
   }
     }
+
   

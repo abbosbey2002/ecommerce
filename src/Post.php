@@ -49,7 +49,7 @@ class Post{
             'rate'=>$rate,  
             'price'=>$price,
             'image'=>$image
-
+            
         ]);
         return 1;
     }
@@ -71,6 +71,10 @@ class Post{
   
         // Execute query
         if($stmt->execute()) {
+            /* Return number of rows that were deleted */
+print("Return number of rows that were deleted:\n");
+$count = $stmt->rowCount();
+print("Deleted $count rows.\n");
           return 1;
         }
 
